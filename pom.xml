@@ -17,8 +17,8 @@
         <payara.password></payara.password>
         <payara.hostname>localhost</payara.hostname>
 	<payara.domainName>${env.PAYARA_DOMAIN_NAME}</payara.domainName>
-	<payara.home>${env.PAYARA_HOME}</payara.home>
-        <payara.domainDir>${payara.home}/glassfish/domains</payara.domainDir>
+	<payara.home>/${env.PAYARA_HOME}</payara.home>
+	<payara.domainDir>/${payara.home}/glassfish/domains</payara.domainDir>
     </properties>
     
     <dependencies>
