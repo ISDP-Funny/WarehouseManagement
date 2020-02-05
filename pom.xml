@@ -53,6 +53,13 @@
 		  <groupId>org.codehaus.cargo</groupId>
 		  <artifactId>cargo-maven2-plugin</artifactId>
 		  <configuration>
+           <deployables>
+                <deployable>
+                    <properties>
+                    <context>/</context>
+                    </properties>
+                </deployable>
+            </deployables>
 		    <container>
 		      <containerId>glassfish5x</containerId>
 		      <type>installed</type>
