@@ -91,7 +91,8 @@
 		    </execution>
 		  </executions>
 		  <configuration>
-			<executable>${basedir}/scripts/check_for_database.sh</executable>
+			<executable>${basedir}/scripts/prepare_database.sh</executable>
+            <workingDirectory>${basedir}</workingDirectory>
 		  </configuration>
 		</plugin>
             <plugin>
