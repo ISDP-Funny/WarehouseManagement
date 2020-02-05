@@ -12,6 +12,13 @@
     <properties>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <payara.adminPort>10048</payara.adminPort>
+        <payara.username>isdp01</payara.username>
+        <payara.password></payara.password>
+        <payara.hostname>localhost</payara.hostname>
+        <payara.domainName>production</payara.domainName>
+        <payara.home>/opt/payara5/</payara.home>
+        <payara.domainDir>${payara.home}/glassfish/domains</payara.domainDir>
     </properties>
     
     <dependencies>
@@ -42,6 +49,35 @@
 
     <build>
         <plugins>
+		<plugin>
+		  <groupId>org.codehaus.cargo</groupId>
+		  <artifactId>cargo-maven2-plugin</artifactId>
+		  <configuration>
+		    <container>
+		      <containerId>glassfish4x</containerId>
+		      <type>installed</type>
+		      <home>${payara.home}</home>
+		    </container>
+		    <configuration>
+		      <type>existing</type>
+		      <home>${payara.domainDir}</home>
+		      <properties>
+		        <cargo.glassfish.domain.name>${payara.domainName}</cargo.glassfish.domain.name>
+			<cargo.glassfish.admin.port>${payara.adminPort}</cargo.glassfish.admin.port>
+			<cargo.remote.username>${payara.username}</cargo.remote.username>
+			<cargo.remote.password>${payara.password}</cargo.remote.password>
+		      </properties>
+		    </configuration>
+		  </configuration>
+		  <!-- provides JSR88 client API to deploy on Payara -->
+		  <dependencies>
+		    <dependency>
+		      <groupId>org.glassfish.main.deployment</groupId>
+		      <artifactId>deployment-client</artifactId>
+		      <version>4.1.1</version>
+		    </dependency>
+		  </dependencies>
+		</plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
