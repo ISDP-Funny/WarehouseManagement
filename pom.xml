@@ -12,12 +12,12 @@
     <properties>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <payara.adminPort>10048</payara.adminPort>
-        <payara.username>isdp01</payara.username>
+	<payara.adminPort>${env.PAYARA_ADMIN_PORT}</payara.adminPort>
+	<payara.username>${env.PAYARA_USERNAME}</payara.username>
         <payara.password></payara.password>
         <payara.hostname>localhost</payara.hostname>
-        <payara.domainName>production</payara.domainName>
-        <payara.home>/opt/payara5/</payara.home>
+	<payara.domainName>${env.PAYARA_DOMAIN_NAME}</payara.domainName>
+	<payara.home>${env.PAYARA_HOME}</payara.home>
         <payara.domainDir>${payara.home}/glassfish/domains</payara.domainDir>
     </properties>
     
