@@ -3,8 +3,8 @@ export DERBY_OPTS='-Dij.database="jdbc:derby://localhost:1527/WM;create=true;use
 
 if ij scripts/test_tables.sql | grep -q "not exist"; then
   echo "Tables not found. Seeding database"
-  ij src/main/resources/createDB.sql
-  ij src/main/resources/initDB.sql
+  echo ij src/main/resources/createDB.sql
+  echo ij src/main/resources/initDB.sql
 
   if ij scripts/test_tables.sql | grep -q "selected"; then
     exit $?
