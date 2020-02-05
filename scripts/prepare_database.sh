@@ -7,12 +7,14 @@ if ij scripts/test_tables.sql | grep -q "not exist"; then
   CREATE_DB="$(ij src/main/resources/createDB.sql)"
   if echo "$CREATE_DB" | grep -q "ERROR"; then
     echo "Failed to create tables"
+    echo "$CREATE_DB"
     exit 2
   fi
 
   INIT_DB="$(ij src/main/resources/initDB.sql)"
   if echo "$INIT_DB" | grep -q "ERROR"; then
     echo "Failed to seed tables"
+    echo "$INIT_DB"
     exit 3
   fi
 
