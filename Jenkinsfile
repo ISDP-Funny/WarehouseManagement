@@ -8,8 +8,10 @@ pipeline {
         stage('Pre-Build') {
 
             steps {
-                echo 'Pre-Build'
-                sh 'mvn clean exec:exec'
+                withEnv({"PATH+EXTRA=/opt/payara5/javadb/bin"}) {
+                    echo 'Pre-Build'
+                    sh 'mvn clean exec:exec'
+                }
             }
             post {
                 success {
