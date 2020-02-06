@@ -4,14 +4,12 @@ pipeline {
     tools {
         maven 'Maven 3.6.3'
     }
-
     stages {
-
         stage('Pre-Build') {
 
             steps {
                 echo 'Pre-Build'
-                sh 'mvn clean'
+                sh 'mvn clean exec:exec'
             }
             post {
                 success {
