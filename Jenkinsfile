@@ -1,6 +1,5 @@
 pipeline {
     agent any
-
     tools {
         maven 'Maven 3.6.3'
     }
@@ -22,8 +21,10 @@ pipeline {
 
         stage('Build') {
             steps {
-                echo 'Build'
-                sh 'mvn package'
+                withEnv(["PATH+EXTRA=/opt/payara5/javadb/bin"]) {
+                    echo 'Build'
+                    sh 'mvn package'
+                }
             }
             post {
                 success {
