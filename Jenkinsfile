@@ -1,12 +1,11 @@
 pipeline {
     agent any
 
-    environment {
-            PATH+EXTRA='/var/lib/jenkins/tools/hudson.tasks.Maven_MavenInstallation/Maven_3.6.3/bin:/var/lib/jenkins/tools/hudson.tasks.Maven_MavenInstallation/Maven_3.6.3/bin'
-        }
+    tools {
+        maven 'Maven 3.6.3'
+    }
 
     stages {
-
 
         stage('Pre-Build') {
 
@@ -16,7 +15,20 @@ pipeline {
             }
             post {
                 success {
-                    echo 'Succesfully deleted old project'
+                    echo 'Successfully deleted old project'
+                }
+            }
+        }
+
+        stage('Build') {
+            steps {
+                echo 'Build'
+                sh 'mvn package'
+            }
+            post {
+                success {
+                    echo 'Successfully built'
+                    sh 'mvn cargo:redeploy'
                 }
             }
         }
