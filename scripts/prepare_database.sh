@@ -12,7 +12,7 @@ if ij scripts/test_tables.sql | grep -q "not exist"; then
   fi
 
   INIT_DB="$(ij src/main/resources/initDB.sql)"
-  if echo "$INIT_DB" | grep -q "ERROR"; then
+  if echo "$INIT_DB" | grep -qP 'ERROR (?!(X0Y32)).*'; then
     echo "Failed to seed tables"
     echo "$INIT_DB"
     exit 3
