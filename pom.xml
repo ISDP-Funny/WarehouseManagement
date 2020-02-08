@@ -72,7 +72,7 @@
 		        <cargo.glassfish.domain.name>${payara.domainName}</cargo.glassfish.domain.name>
 			<cargo.glassfish.admin.port>${payara.adminPort}</cargo.glassfish.admin.port>
 			<cargo.remote.username>${payara.username}</cargo.remote.username>
-			<cargo.remote.passwordFile>1337_420</cargo.remote.passwordFile>
+			<cargo.remote.passwordFile>ihopeudontwork</cargo.remote.passwordFile>
 		      </properties>
 		    </configuration>
 		  </configuration>
