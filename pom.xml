@@ -19,6 +19,7 @@
 	<payara.domainName>${env.PAYARA_DOMAIN_NAME}</payara.domainName>
 	<payara.home>/${env.PAYARA_HOME}</payara.home>
 	<payara.domainDir>/${payara.home}/glassfish/domains</payara.domainDir>
+    <payara.passwordFile>ihopeudontwork</payara.passwordFile>
     </properties>
     
     <dependencies>
@@ -72,7 +73,7 @@
 		        <cargo.glassfish.domain.name>${payara.domainName}</cargo.glassfish.domain.name>
 			<cargo.glassfish.admin.port>${payara.adminPort}</cargo.glassfish.admin.port>
 			<cargo.remote.username>${payara.username}</cargo.remote.username>
-			<cargo.remote.passwordFile>ihopeudontwork</cargo.remote.passwordFile>
+			<cargo.remote.passwordFile>${payara.passwordFile}</cargo.remote.passwordFile>
 		      </properties>
 		    </configuration>
 		  </configuration>
