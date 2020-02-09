@@ -7,8 +7,10 @@ import org.openqa.selenium.chrome.ChromeOptions;
 public class TestUtils {
     public static WebDriver getDriver() {
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless");
-        options.addArguments("--disable-gpu");
+        if (System.getenv("BUILD_ID") != null) {
+            options.addArguments("--headless");
+            options.addArguments("--disable-gpu");
+        }
         return new ChromeDriver(options);
     }
 
