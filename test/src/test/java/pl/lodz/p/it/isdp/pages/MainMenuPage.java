@@ -33,4 +33,8 @@ public class MainMenuPage {
     public ProductMenu getProductMenu() {
         return new ProductMenu(context.findElement(By.className("product")));
     }
+
+    public WebElement getRegisterButton() { return context.findElement(By.cssSelector("#myNavbar .register")); }
+
+    public void goToRegister() { getRegisterButton().click(); }
 }
