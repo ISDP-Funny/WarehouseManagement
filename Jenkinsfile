@@ -29,7 +29,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Build'
-                sh 'mvn package -pl main'
+                sh 'mvn package'
             }
             post {
                 success {
