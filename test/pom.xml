@@ -40,7 +40,7 @@
         </executions>
         <configuration>
           <parallel>classes</parallel>
-          <threadCount>4</threadCount>
+          <useUnlimitedThreads>true</useUnlimitedThreads>
           <systemProperties>
             <property>
               <name>baseUrl</name>
