@@ -16,9 +16,9 @@
                             <tr>
                                 <h:outputText id="productSymbol" value="${deleteProductPageBean.productDTO.productSymbol}" />
                             </tr>
-                        </table>
+                        </table> 
                     </h:panelGrid>
-                    <h:commandButton styleClass="button" value="#{msg['page.delete.product.form.action.delete']}" action="${deleteProductPageBean.deleteProductAction()}" />
+                    <h:commandButton styleClass="button delete-product" value="#{msg['page.delete.product.form.action.delete']}" action="${deleteProductPageBean.deleteProductAction()}" />
                     <h:commandButton value="#{msg['page.form.action.cancel']}"  action="listProducts" immediate="true"/>
                 </h:form>
             </ui:define>
