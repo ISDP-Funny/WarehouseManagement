@@ -27,7 +27,7 @@
                         #{msg['page.stock.up.form.label.location.max.weight']}: 
                         <h:inputText id="maxWeight" value="${stockUpPageBean2.stockDTO.location.maxWeight}" disabled="true" size="80" />
                     </h:panelGrid>
-                    <h:commandButton styleClass="button" value="#{msg['page.stock.up.form.form.action.create']}" action="${stockUpPageBean2.toStockUpAction()}" />
+                    <h:commandButton id="confirm" styleClass="button" value="#{msg['page.stock.up.form.form.action.create']}" action="${stockUpPageBean2.toStockUpAction()}" />
                     <h:commandButton value="#{msg['page.form.action.cancel']}"  action="stockUp" />
                 </h:form>
             </ui:define>
