@@ -26,7 +26,7 @@ public class ITWarehouseUseCase extends DriverBase {
         upPage.setContractor("0048422523923");
         upPage.setProduct("9788376266909");
         upPage.setQuantity(10);
-        upPage.setLocation("AA-01-04-04");
+        upPage.setLocation("AA-01-01-01");
         upPage.add();
 
         new MainMenuPage(driver).getStockMenu()
@@ -42,6 +42,5 @@ public class ITWarehouseUseCase extends DriverBase {
         issuePage.getQuantityInput().sendKeys("10");
         issuePage.getApproveInput().click();
     }
-
 
 }

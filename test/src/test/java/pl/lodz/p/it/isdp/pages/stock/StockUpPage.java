@@ -33,7 +33,7 @@ public class StockUpPage {
     }
 
     public void setQuantity(int quantity) {
-        getQuantityInput().sendKeys(String.valueOf(quantity));
+        getQuantityInput().sendKeys(Integer.toString(quantity));
     }
 
     public Select getLocationSelect() {

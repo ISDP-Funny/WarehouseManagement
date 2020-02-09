@@ -13,15 +13,15 @@ public class StockListPage {
     }
 
     public Select getProductSelect() {
-        return new Select(context.findElement(By.id("StockListForm:productSymbol")));
+        return new Select(context.findElement(By.cssSelector("[id$=productSymbol]")));
     }
 
     public WebElement getViewStockButton() {
-        return context.findElement(By.id("StockListForm:view-stock"));
+        return context.findElement(By.cssSelector("[id$=view-stock]"));
     }
 
     public WebElement getStockIssueButton() {
-        return context.findElement(By.id("StockListForm:issue-stock"));
+        return context.findElement(By.cssSelector("[id$=issue-stock]"));
     }
 
 }
