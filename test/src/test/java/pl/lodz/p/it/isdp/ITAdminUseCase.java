@@ -18,6 +18,7 @@ public class ITAdminUseCase extends DriverBase {
 
     @Test
     public void addAndDeleteAccount() {
+        Assert.assertTrue(false);
         WebDriver driver = getDriver();
         driver.get(getAppUrl());
 
