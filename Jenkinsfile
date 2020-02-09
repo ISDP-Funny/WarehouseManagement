@@ -28,15 +28,25 @@ pipeline {
 
         stage('Build') {
             steps {
-                withEnv(["PATH+EXTRA=/opt/payara5/javadb/bin"]) {
-                    echo 'Build'
-                    sh 'mvn package'
-                }
+                echo 'Build'
+                sh 'mvn package'
             }
             post {
                 success {
                     echo 'Successfully built'
-                    sh 'mvn cargo:redeploy'
+                    sh 'mvn cargo:redeploy -pl main'
+                }
+            }
+        }
+
+        stage('Integration tests') {
+            steps {
+                echo 'Integration tests'
+                sh 'mvn failsafe:integration-test'
+            }
+            post {
+                always {
+                    junit 'test/target/failsafe-reports/*.xml'
                 }
             }
         }
