@@ -44,7 +44,7 @@
           <systemProperties>
             <property>
               <name>baseUrl</name>
-              <value>https://localhost:10080</value>
+              <value>http://localhost:10080</value>
             </property>
           </systemProperties>
         </configuration>
