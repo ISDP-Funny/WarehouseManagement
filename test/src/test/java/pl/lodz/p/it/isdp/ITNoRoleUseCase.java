@@ -11,7 +11,7 @@ public class ITNoRoleUseCase extends DriverBase {
         WebDriver driver = getDriver();
         driver.get(getAppUrl());
         String title = driver.getTitle();
-        Assert.assertTrue(title.contains("Strona główna"));
+        Assert.assertTrue(title.contains("Main page"));
     }
 
 
