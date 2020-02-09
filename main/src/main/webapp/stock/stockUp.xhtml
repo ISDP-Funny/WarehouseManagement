@@ -30,7 +30,7 @@
                             <f:selectItems value="${stockUpPageBean.locations}" var="locationSymbol" itemValue="#{locationSymbol}" itemLabel="#{locationSymbol.displayLabel}" /> 
                         </h:selectOneMenu>
                     </h:panelGrid>
-                    <h:commandButton styleClass="button" value="#{msg['page.stock.up.form.form.action.create']}" action="${stockUpPageBean.toStockUpAction()}" />
+                    <h:commandButton id="add-to-stock" styleClass="button" value="#{msg['page.stock.up.form.form.action.create']}" action="${stockUpPageBean.toStockUpAction()}" />
                     <h:commandButton value="#{msg['page.form.action.cancel']}"  action="main" immediate="true"/>
                 </h:form>
             </ui:define>
