@@ -5,10 +5,16 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 public class TestUtils {
+    private static boolean isRemote = System.getenv("BUILD_ID") != null;
+    
     public static WebDriver getDriver() {
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless");
-        options.addArguments("--disable-gpu");
+        if (isRemote) {
+            options.addArguments("--headless");
+            options.addArguments("--disable-gpu");
+        } else {
+            options.addArguments("--ignore-certificate-errors");
+        }
         return new ChromeDriver(options);
     }
 

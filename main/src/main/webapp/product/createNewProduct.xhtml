@@ -32,7 +32,7 @@
                             <f:selectItem itemValue = "true" itemLabel = "#{msg['page.create.new.product.form.label.easily.damage.true']}" />
                         </h:selectOneRadio>
                     </h:panelGrid>
-                    <h:commandButton styleClass="button" value="#{msg['page.create.new.product.form.action.create']}"  action="${createNewProductPageBean.createNewProductAction()}" />
+                    <h:commandButton styleClass="button create" value="#{msg['page.create.new.product.form.action.create']}"  action="${createNewProductPageBean.createNewProductAction()}" />
                     <h:commandButton value="#{msg['page.form.action.cancel']}"  action="main" immediate="true"/>
                 </h:form>
             </ui:define>

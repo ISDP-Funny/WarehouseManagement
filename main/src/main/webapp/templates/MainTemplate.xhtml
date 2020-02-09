@@ -46,7 +46,7 @@
                                         <ul class="nav navbar-nav">
                                             <li class="active"><a href="../main/index.xhtml"><span class="glyphicon glyphicon-home" /> #{msg['page.main.title']}</a></li>
                                             <f:subview id="noAuthenticationView" rendered="#{empty request.remoteUser}" >
-                                                <li><a href="../common/signIn.xhtml"><span class="glyphicon glyphicon-log-in"></span> #{msg['page.main.action.sign.in']}</a></li>
+                                                <li><a href="../common/signIn.xhtml" class="login"><span class="glyphicon glyphicon-log-in"></span> #{msg['page.main.action.sign.in']}</a></li>
                                                 <li><a href="../common/resetPassword.xhtml"><span class="glyphicon glyphicon-trash"></span> #{msg['page.reset.password.title']}</a></li>
                                                 <li><a href="../common/registerAccount.xhtml"><span class="glyphicon glyphicon-user"></span> #{msg['page.main.action.register.account']}</a></li>
                                             </f:subview>
@@ -71,12 +71,12 @@
                                                 </li>
                                             </f:subview>
                                             <f:subview id="office" rendered="#{request.isUserInRole('Office')}" >
-                                                <li class="dropdown">
+                                                <li class="dropdown product">
                                                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">#{msg['page.main.product']}
                                                         <span class="caret"></span></a>
                                                     <ul class="dropdown-menu">
-                                                        <li><a href="../product/createNewProduct.xhtml">#{msg['page.create.new.product.title']}</a></li>
-                                                        <li><a href="../product/listProducts.xhtml">#{msg['page.list.products.title']}</a></li>
+                                                        <li><a class="product--create" href="../product/createNewProduct.xhtml">#{msg['page.create.new.product.title']}</a></li>
+                                                        <li><a class="product--list" href="../product/listProducts.xhtml">#{msg['page.list.products.title']}</a></li>
                                                     </ul>
                                                 </li>
                                                 <li class="dropdown">
@@ -171,7 +171,7 @@
             <div class="row">
                 <div class="col-md-12 footer">
                     <ui:insert name="footer">
-                        <h4><span class="glyphicon glyphicon-user" /> #{msg['page.main.sign.in.user']} ${mainApplicationPageBean.myLogin}</h4>
+                        <h4><span class="glyphicon glyphicon-user" /> #{msg['page.main.sign.in.user']} <strong>${mainApplicationPageBean.myLogin}</strong></h4>
                     </ui:insert>
                 </div>              
             </div>

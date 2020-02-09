@@ -34,7 +34,7 @@
                             <f:facet name="header">${msg['page.list.header.label.actions']}</f:facet>
                             <f:subview id="onlyOffice" rendered="#{request.isUserInRole('Office')}" >
                                 <h:commandButton value="${msg['page.list.products.action.edit.product']}" action="${listProductsPageBean.editProductAction(row)}"/>
-                                <h:commandButton value="${msg['page.list.products.action.delete.product']}" action="${listProductsPageBean.deleteSelectedProductAction(row)}"/>
+                                <h:commandButton styleClass="delete-product" value="${msg['page.list.products.action.delete.product']}" action="${listProductsPageBean.deleteSelectedProductAction(row)}"/>
                             </f:subview>
                         </h:column>
                     </h:dataTable>
