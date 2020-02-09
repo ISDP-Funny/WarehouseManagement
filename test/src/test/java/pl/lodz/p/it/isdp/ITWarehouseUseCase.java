@@ -11,7 +11,7 @@ import pl.lodz.p.it.isdp.pages.stock.StockUpPage;
 public class ITWarehouseUseCase extends DriverBase {
 
     @Test
-    public void login() {
+    public void stockUp() {
         WebDriver driver = getDriver();
         driver.get(getAppUrl());
 
