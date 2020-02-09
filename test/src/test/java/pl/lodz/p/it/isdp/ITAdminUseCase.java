@@ -11,7 +11,6 @@ public class ITAdminUseCase extends DriverBase {
         WebDriver driver = getDriver();
         driver.get(getAppUrl());
         String title = driver.getTitle();
-        System.out.println("URL: "+title);
         Assert.assertTrue(title.contains("Main page"));
     }
 
