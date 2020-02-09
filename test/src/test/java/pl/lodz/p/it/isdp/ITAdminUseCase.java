@@ -6,10 +6,10 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import org.openqa.selenium.*;
 import pl.lodz.p.it.isdp.pages.MainMenuPage;
+import pl.lodz.p.it.isdp.pages.RegisterPage;
 import pl.lodz.p.it.isdp.pages.SignInPage;
 import pl.lodz.p.it.isdp.pages.account.DeleteAccountPage;
 import pl.lodz.p.it.isdp.pages.account.NewAccountsListPage;
-import pl.lodz.p.it.isdp.pages.account.RegisterAccountPage;
 
 public class ITAdminUseCase extends DriverBase {
 
@@ -32,7 +32,7 @@ public class ITAdminUseCase extends DriverBase {
 
         mainPage.goToRegisterAccount();
 
-        RegisterAccountPage page = new RegisterAccountPage(driver);
+        RegisterPage page = new RegisterPage(driver);
         page.fillForm("Yan","Kovalski","kovalsky@example.com","YKovalsky",
                 "P@ssw0rd","Favorite number?", "1");
         page.register();
