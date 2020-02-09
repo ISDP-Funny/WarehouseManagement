@@ -48,8 +48,13 @@ public class StockUpPage {
         return context.findElement(By.id("StockUpForm:add-to-stock"));
     }
 
+    public WebElement getConfirmButton() {
+        return context.findElement(By.id("StockUp2Form:confirm"));
+    }
+
     public void add() {
         getAddStockButton().click();
+        getConfirmButton().click();
     }
 
 }

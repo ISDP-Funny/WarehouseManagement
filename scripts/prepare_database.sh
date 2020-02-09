@@ -4,14 +4,14 @@ export DERBY_OPTS='-Dij.database="jdbc:derby://localhost:1527/WM;create=true;use
 if ij scripts/test_tables.sql | grep -q "not exist"; then
   echo "Tables not found. Seeding database"
 
-  CREATE_DB="$(ij src/main/resources/createDB.sql)"
+  CREATE_DB="$(ij main/src/main/resources/createDB.sql)"
   if echo "$CREATE_DB" | grep -qP 'ERROR (?!(42Y55|X0X05)).*' ; then
     echo "Failed to create tables"
     echo "$CREATE_DB"
     exit 2
   fi
 
-  INIT_DB="$(ij src/main/resources/initDB.sql)"
+  INIT_DB="$(ij main/src/main/resources/initDB.sql)"
   if echo "$INIT_DB" | grep -qP 'ERROR (?!(X0Y32)).*'; then
     echo "Failed to seed tables"
     echo "$INIT_DB"
