@@ -17,7 +17,7 @@ public class ITAdminUseCase extends DriverBase {
     public final ExpectedException exception = ExpectedException.none();
 
     @Test
-    public void testAdmin() {
+    public void addAndDeleteAccount() {
         WebDriver driver = getDriver();
         driver.get(getAppUrl());
 
