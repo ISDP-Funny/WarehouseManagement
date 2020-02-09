@@ -8,6 +8,7 @@ public class TestUtils {
     public static WebDriver getDriver() {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless");
+        options.addArguments("--disable-gpu");
         return new ChromeDriver(options);
     }
 
