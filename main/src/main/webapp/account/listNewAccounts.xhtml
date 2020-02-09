@@ -33,7 +33,7 @@
                                 <f:selectItems  value="${listNewRegisteredAccountsPageBean.listAccessLevels}" var="accessLevel" itemValue="#{accessLevel}" itemLabel="#{accessLevel.accessLevelI18NValue}" />
                             </h:selectOneMenu>
                             <h:commandButton value="${msg['page.list.new.accounts.action.change.access.level']}" action="${listNewRegisteredAccountsPageBean.setAccessLevelSelectedAccountAction(row)}"/>
-                            <h:commandButton value="${msg['page.list.new.accounts.action.delete']}" action="${listNewRegisteredAccountsPageBean.deleteSelectedAccountAction(row)}"/>
+                            <h:commandButton id="delete-account-button" value="${msg['page.list.new.accounts.action.delete']}" action="${listNewRegisteredAccountsPageBean.deleteSelectedAccountAction(row)}"/>
                         </h:column>
                     </h:dataTable>
                     <h:outputLink value="../main/index.xhtml">${msg['page.action.main']} </h:outputLink>  
