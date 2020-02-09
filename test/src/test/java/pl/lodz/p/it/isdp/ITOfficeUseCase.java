@@ -11,7 +11,7 @@ public class ITOfficeUseCase extends DriverBase {
         WebDriver driver = getDriver();
         driver.get(getAppUrl());
         String title = driver.getTitle();
-        Assert.assertTrue(title.contains("HAKUNA MATATA"));
+        Assert.assertTrue(title.contains("Main page"));
     }
 
 
