@@ -13,7 +13,7 @@ public class TestUtils {
             options.addArguments("--headless");
             options.addArguments("--disable-gpu");
         } else {
-            options.addArguments("--ignore-certificate-errors");
+            options.addArguments("--ignore-certificate-errors", "--allow-insecure-localhost");
         }
         return new ChromeDriver(options);
     }

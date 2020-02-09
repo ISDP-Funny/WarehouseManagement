@@ -8,8 +8,8 @@ package pl.lodz.p.it.isdp.pages;
 import pl.lodz.p.it.isdp.pages.product.ProductMenu;
 import org.openqa.selenium.By;
 import org.openqa.selenium.SearchContext;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import pl.lodz.p.it.isdp.pages.account.AccountMenu;
 
 /**
  *
@@ -32,5 +32,21 @@ public class MainMenuPage {
     
     public ProductMenu getProductMenu() {
         return new ProductMenu(context.findElement(By.className("product")));
+    }
+
+    public WebElement getRegisterButton() {
+        return context.findElement(By.cssSelector("#myNavbar .register"));
+    }
+
+    public void goToRegisterAccount() {
+        getRegisterButton().click();
+    }
+
+    public AccountMenu getUserMenu() {
+        return new AccountMenu(context.findElement(By.cssSelector("#myNavbar .user")));
+    }
+
+    public WebElement getFooterText() {
+        return context.findElement(By.className("footer"));
     }
 }

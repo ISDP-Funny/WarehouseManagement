@@ -42,7 +42,7 @@
                             <f:validateRegex pattern="[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ0-9\ \'\.]+" />
                         </h:inputText>
                     </h:panelGrid>
-                    <h:commandButton styleClass="button" value="#{msg['page.register.account.form.action.register']}"  action="${accountRegistrationPageBean.registerAccountAction()}" />
+                    <h:commandButton id="register-account-button" styleClass="button" value="#{msg['page.register.account.form.action.register']}"  action="${accountRegistrationPageBean.registerAccountAction()}" />
                     <h:commandButton value="#{msg['page.form.action.cancel']}"  action="main" immediate="true"/>
                 </h:form>
             </ui:define>

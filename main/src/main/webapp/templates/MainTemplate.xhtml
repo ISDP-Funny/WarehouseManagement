@@ -48,7 +48,7 @@
                                             <f:subview id="noAuthenticationView" rendered="#{empty request.remoteUser}" >
                                                 <li><a href="../common/signIn.xhtml" class="login"><span class="glyphicon glyphicon-log-in"></span> #{msg['page.main.action.sign.in']}</a></li>
                                                 <li><a href="../common/resetPassword.xhtml"><span class="glyphicon glyphicon-trash"></span> #{msg['page.reset.password.title']}</a></li>
-                                                <li><a href="../common/registerAccount.xhtml"><span class="glyphicon glyphicon-user"></span> #{msg['page.main.action.register.account']}</a></li>
+                                                <li><a href="../common/registerAccount.xhtml" class="register"><span class="glyphicon glyphicon-user"></span> #{msg['page.main.action.register.account']}</a></li>
                                             </f:subview>
                                             <f:subview id="authenticationView" rendered="#{not empty request.remoteUser}" >
                                                 <li class="dropdown">
@@ -60,13 +60,13 @@
                                                 </li>
                                             </f:subview>
                                             <f:subview id="administration" rendered="#{request.isUserInRole('Administration')}" >
-                                                <li><a href="../common/registerAccount.xhtml"><span class="glyphicon glyphicon-user"></span> #{msg['page.main.action.register.account']}</a></li>
-                                                <li class="dropdown">
+                                                <li><a href="../common/registerAccount.xhtml" class="register"><span class="glyphicon glyphicon-user"></span> #{msg['page.main.action.register.account']}</a></li>
+                                                <li class="dropdown user">
                                                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">#{msg['page.main.account']}
                                                         <span class="caret"></span></a>
                                                     <ul class="dropdown-menu">
-                                                        <li><a href="../account/listNewAccounts.xhtml">#{msg['page.main.action.list.new.accounts']}</a></li>
-                                                        <li><a href="../account/listAuthorizedAccounts.xhtml">#{msg['page.main.action.list.authorized.accounts']}</a></li>
+                                                        <li><a class="accounts--new" href="../account/listNewAccounts.xhtml">#{msg['page.main.action.list.new.accounts']}</a></li>
+                                                        <li><a class="accounts--authorized" href="../account/listAuthorizedAccounts.xhtml">#{msg['page.main.action.list.authorized.accounts']}</a></li>
                                                     </ul>
                                                 </li>
                                             </f:subview>
