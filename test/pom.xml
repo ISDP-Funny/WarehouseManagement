@@ -39,8 +39,6 @@
           </execution>
         </executions>
         <configuration>
-          <parallel>classes</parallel>
-          <useUnlimitedThreads>true</useUnlimitedThreads>
           <systemProperties>
             <property>
               <name>baseUrl</name>
